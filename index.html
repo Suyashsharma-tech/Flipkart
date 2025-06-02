@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clone -- Flipkart</title>
+  <style>
+    /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f1f3f6;
+    }
+
+    /* Header styles */
+    header {
+      background-color: #2874f0;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    header div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav img {
+      cursor: pointer;
+    }
+
+    /* Search bar */
+    form input[type="search"] {
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      width: 400px;
+      max-width: 100%;
+      outline: none;
+    }
+
+    /* Header navigation */
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    ul li {
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    ul li:hover {
+      color: #ffeb3b;
+    }
+
+    /* Category section */
+    main > div {
+      background-color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    main ul {
+      display: flex;
+      gap: 40px;
+    }
+
+    main li {
+      text-align: center;
+      font-size: 14px;
+      color: #333;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    main li:hover {
+      transform: scale(1.1);
+      color: #2874f0;
+    }
+
+    main img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      background-color: #172337;
+      color: white;
+      padding: 20px;
+    }
+
+    /* Slider Section */
+    .slider {
+      width: 100%;
+      max-width: 1000px;
+      height: 200px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      position: relative;
+    }
+
+    /* Slides Container */
+    .slide-track {
+      display: flex;
+      width: calc(300% * 2); /* double length for duplicate */
+      animation: scroll 20s linear infinite;
+    }
+
+    /* Individual Slide Image */
+    .slide-track img {
+      width: 1000px; /* fix width */
+      height: 200px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* Infinite Scroll Animation */
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(calc(-50%));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .slider {
+        height: 140px;
+      }
+
+      .slide-track img {
+        height: 140px;
+        width: 700px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div>
+      <nav>
+        <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus-44005d.svg"
+          width="160" height="40" title="Flipkart" />
+      </nav>
+      <form action="">
+        <input type="search" placeholder="Search Here" />
+      </form>
+      <ul>
+        <li>Login</li>
+        <li>Cart</li>
+      </ul>
+    </div>
+  </header>
+  <main>
+    <div>
+      <ul>
+        <li>
+          <img class="_2puWtW _3a3qyb" alt="Kilos"
+            src="https://rukminim2.flixcart.com/flap/51/51/image/29327f40e9c4d26b.png?q=100" />
+          Kilos
+        </li>
+        <li>
+          <img class="_2puWtW _3a3qyb" alt="Mobiles"
+            src="https://rukminim2.flixcart.com/flap/51/51/image/22fddf3c7da4c4f4.png?q=100" />
+          Mobiles
+        </li>
+        <li>
+          <img class="_2puWtW _3a3qyb" alt="Fashion"
+            src="https://rukminim2.flixcart.com/fk-p-flap/51/51/image/0d75b34f7d8fbcb3.png?q=100" />
+          Fashion
+        </li>
+      </ul>
+    </div>
+
+    <section class="slider">
+      <div class="slide-track">
+        <img src="banner.png" alt="Slide 1" />
+        <img src="banner1.png" alt="Slide 2" />
+        <img src="banner2.png" alt="Slide 3" />
+        <img src="banner3.png" alt="Slide 4" />
+
+        <!-- duplicate slides for seamless looping -->
+        <img src="banner.png" alt="Slide 1 Duplicate" />
+        <img src="banner1.png" alt="Slide 2 Duplicate" />
+        <img src="banner2.png" alt="Slide 3 Duplicate" />
+        <img src="banner3.png" alt="Slide 4 Duplicate" />
+      </div>
+    </section>
+  </main>
+  <footer>
+    Copyright &copy; | All Rights Reserved
+  </footer>
+
+  <script>
+    // Smooth hover effects on categories
+    document.querySelectorAll('main li').forEach(item => {
+      item.addEventListener('click', () => {
+        alert(`You clicked on ${item.textContent.trim()}!`);
+      });
+    });
+  </script>
+</body>
+
+</html>

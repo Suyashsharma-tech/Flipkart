@@ -1,0 +1,141 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f1f3f6;
+}
+
+/* Header styles */
+header {
+  background-color: #2874f0;
+  color: white;
+  padding: 10px 20px;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav img {
+  cursor: pointer;
+}
+
+/* Search bar */
+form input[type="search"] {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  width: 400px;
+  max-width: 100%;
+  outline: none;
+}
+
+/* Header navigation */
+ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+ul li {
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+ul li:hover {
+  color: #ffeb3b;
+}
+
+/* Category section */
+main > div {
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+main ul {
+  display: flex;
+  gap: 40px;
+}
+
+main li {
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+main li:hover {
+  transform: scale(1.1);
+  color: #2874f0;
+}
+
+main img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #172337;
+  color: white;
+  padding: 20px;
+}
+
+/* Slider Section */
+.slider {
+  width: 100%;
+  max-width: 1000px;
+  height: 200px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Slides Container */
+.slides {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  animation: slide 9s infinite;
+}
+
+/* Individual Slide Image */
+.slides img {
+  width: 1021px;
+  height: 200px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  33%  { transform: translateX(-100%); }
+  66%  { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    height: 140px;
+  }
+}
+
